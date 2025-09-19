@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Contactez-nous</title>
+</head>
+
+<body>
+    <header>
+        <img src="./image/logo.jpeg" alt="logoafpa.jpeg">
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="Page3Témoignages.html">Témoignages</a></li>
+                <li><a href="Page4références.html">Nos références</a></li>
+                <li><a href="Page5contactez-nous.html">Nous contacter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="Titre page 5">
+            <h1>Contactez-nous</h1><br>
+        </div>
+        <div class="Titre Formulaires">
+            <h3>Formulaire</h3>
+        </div><br><br>
+
+        <form>
+
+            <fieldset class="coordonnées">
+                <legend>
+                    <h4>vos coordonnées</h4>
+                </legend>
+
+
+                <label for="Nom">Votre nom</label>
+                <input type="text" id="Nom" name="Nom" required><br>
+
+                <label for="Prenom">Votre prénom</label>
+                <input type="text" id="Prenom" name="Prenom" required><br>
+
+                <label for="E-mail">E-mail</label>
+                <input type="email" id="E-mail" name="E-mail" required> <br>
+
+                <label for="Telephone">Numéro de téléphone</label>
+                <input type="text" id="Telephone" name="Telephone" required><br>
+            </fieldset><br>
+
+
+            <h4>Votre situation</h4>
+
+            <div class="votre situation">
+                <label for="Emploi">Demandeur d'emploi</label>
+                <input type="radio" id="Emploi" name="situation" value="Emploi"><br>
+                <label for="Transition-professionnelle">Salarié en transition professionnelle </label>
+                <input type="radio" id="Transition-professionnelle" name="situation"
+                    value="Transition-professionnelle"><br>
+                <label for="Autre">Autre</label>
+                <input type="radio" id="Autre" name="situation" value="Autre"><br><br>
+            </div>
+
+
+            <h4>Vos modalité d'apprentissage privilégiées </h4>
+
+            <div class="modalie">
+                <label for="Centre">En centre de formation (Présentiel)</label>
+                <input type="radio" id="Centre" name="Modalite" value="Centre"><br>
+                <label for="Distance">100% à distance </label>
+                <input type="radio" id="Distance" name="Modalite" value="Distance"><br>
+                <label for="Contrat">En contrat d'alternance avec l'entreprise</label>
+                <input type="radio" id="Contrat" name="Modalite" value="Contrat"><br>
+                <label for="Preference">Sans préférence</label>
+                <input type="radio" id="Preference" name="Modalite" value="Preference"><br><br>
+            </div>
+
+
+
+
+
+            <h4>Votre région d'origine</h4>
+
+            <div class="region">
+                <select name="region" id="region">
+                    <option value="bretagne">Bretagne </option>
+                    <option value="paysdelaloire">Pays de la Loire</option>
+                    <option value="normandie">Normandie</option>
+                </select><br><br>
+            </div>
+            <div class="button">
+                <button type="submit">Envoyer</button>
+                <button type="reset"> Annulez</button>
+            </div>
+        </form>
+
+
+
+
+
+
+
+    </main>
+    <footer>
+        ©2025 AFPA-Tous droit réservés
+    </footer>
+
+</body>
+
+</html>

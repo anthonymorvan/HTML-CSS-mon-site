@@ -1,0 +1,192 @@
+@import "typography.css";
+
+* {
+    font-family: 'Gotham', sans-serif;
+    margin: 0;
+}
+
+header {
+    height: 8vh;
+    background-color: #94c33d;
+    height: 8vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    height: 8vh;
+    width: auto;
+}
+
+main {
+    min-height: 81vh;
+    width: auto;
+}
+
+
+nav {
+    margin: 0;
+    height: 100%;
+}
+
+
+
+footer {
+    height: 9vh;
+    background-color: #94c33d;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    height: 100%;
+
+
+}
+
+
+.menu li a {
+    text-decoration: none;
+    color: #000000;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+.menu li a:hover {
+    background-color: rgb(204, 198, 198);
+
+}
+
+.titreh2index {
+    color: #94c33d;
+}
+
+.presentation {
+    background-image: url(../image/A3-1920.jpg);
+    background-size: 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 73vh;
+    color: #ffffff;
+    padding: 10px 50% 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #94c33d;
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+}
+
+.titreindex {
+    height: 10vh;
+    background-color: #dcddd9;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+.titrepage2 {
+
+    height: 10vh;
+    background-color: #dcddd9;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+.containerformation {
+    display: flex;
+    /* Active le mode Flexbox pour placer les deux colonnes côte à côte */
+    justify-content: space-between;
+    /* Ajoute de l'espace entre la colonne gauche et la colonne droite */
+    align-items: stretch;
+    /* Étire les colonnes pour qu'elles aient la même hauteur */
+    gap: 20px;
+    /* Espace horizontal entre les deux colonnes */
+    padding: 20px;
+    /* Ajoute un espace intérieur au conteneur */
+    height: 73vh;
+    /* Le conteneur occupe toute la hauteur visible de la fenêtre */
+    box-sizing: border-box;
+    /* Inclut les bordures et le padding dans la taille totale */
+}
+
+.gauche,
+.droites {
+    flex: 1;
+    /* Chaque colonne prend la même largeur (50% chacune) */
+    display: flex;
+    /* Active Flexbox à l'intérieur de la colonne */
+    flex-direction: column;
+    /* Organise les éléments verticalement dans la colonne */
+    justify-content: space-between;
+    /* Répartit le contenu du haut vers le bas avec un espacement équilibré */
+    padding: 20px;
+    /* Espace intérieur dans chaque colonne */
+    background-color: #f5f5f5;
+    /* Couleur de fond légère pour mieux visualiser les colonnes */
+    border: 1px solid #ccc;
+    /* Bordure fine et grise autour des colonnes */
+    box-sizing: border-box;
+    /* Inclut padding et bordure dans les dimensions */
+    gap: 15px;
+    /* Espace vertical entre les éléments internes (titres, paragraphes, etc.) */
+}
+
+h2,
+h3,
+p {
+    margin: 0;
+    /* Supprime les marges par défaut des titres et paragraphes pour garder un alignement parfait */
+}
+
+p {
+    line-height: 1.6;
+    /* Améliore la lisibilité en augmentant l'espace entre les lignes de texte */
+}
