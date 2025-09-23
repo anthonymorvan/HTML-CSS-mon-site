@@ -109,6 +109,17 @@ label,
 
 }
 
+.titreindex {
+    display: flex;
+    height: 8vh;
+    background-color: #dcddd9;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
 .presentation {
     display: flex;
     flex-wrap: wrap;
@@ -150,16 +161,7 @@ label,
     background-color: #ffffff;
 }
 
-.titreindex {
-    display: flex;
-    height: 8vh;
-    background-color: #dcddd9;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-}
+
 
 
 
@@ -238,41 +240,126 @@ p {
 
 .contenairpagetemoignage {
     display: flex;
-    text-align: center;
     flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
     width: 100%;
-    height: 72.6vh;
-    background-color: #ffffff;
-    margin: 5px auto;
-    flex-direction: column;
+    min-height: 71.8vh;
+    margin: 10px auto;
+    background: #fff;
+    box-sizing: border-box;
 }
 
-
-
+/* 3 colonnes */
 .temoignage {
+    flex: 1 1 calc(33.333% - 20px);
+    background: #94c33d;
+    padding: 14px;
+    border-radius: 6px;
+    box-sizing: border-box;
     display: flex;
-    width: 30%;
-    height: 80%;
-    margin: auto;
-    background-color: #94c33d;
-    text-align: justify;
-    flex-wrap: wrap;
-
+    gap: 12px;
 }
 
-.container h3 {
+/* image + texte */
+.temoignage img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex: 0 0 90px;
+}
+
+.temoignage .texte {
+    flex: 1;
+}
+
+.temoignage h4 {
+    margin: 0 0 6px;
+}
+
+.temoignage p {
+    margin: 0 0 8px;
+    text-align: justify;
+}
+
+
+
+h3 {
     text-align: center;
 
 }
+
+
+
+
+
+
 
 .titrepage4 {
-    height: 8vh;
+    padding: 10px 0;
+    height: auto;
     background-color: #dcddd9;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* occupe au minimum l'espace entre header (8vh) et footer (8vh) */
+    min-height: calc(100dvh - 8vh - 8vh);
+}
+
+
+/* la section principale prend le reste de la place */
+.contentpage4 {
+    flex: 1 0 auto;
+    /* ← clé : elle “remplit” la hauteur restante */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+
+    width: 100%;
+    height: auto;
+    /* garde auto, pas de vh */
+    padding: 24px 16px;
+
+    background-image: url("../image/A2-1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+/* grille des logos */
+.contentpage4>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px 16px;
+    max-width: 1100px;
+}
+
+.contentpage4>div img {
+    width: 90px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* images de logos : la CSS écrase les width/height HTML */
+.contentpage4>div img {
+    width: 90px;
+    /* desktop */
+    height: auto;
+    object-fit: contain;
 }
 
 
@@ -286,37 +373,6 @@ p {
     color: #000000;
 
 }
-
-.contentpage4 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    background-image: url(../image/A2-1920.jpg);
-    background-size: 100%;
-    background-position: left;
-    background-repeat: no-repeat;
-    height: 76vh;
-    color: #ffffff;
-}
-
-.contentpage4 h3 {
-    display: block;
-    margin-top: 5%;
-    margin-bottom: 15%;
-    font-size: 150%;
-
-}
-
-
-
-
-
-
-
-
-
-
 
 
 .contentpage5 {
@@ -394,30 +450,266 @@ fieldset {
     width: 30%;
 }
 
-@media screen and (max-width:768px) {
+
+
+
+
+/* === Responsive design === */
+@media (max-width: 768px) {
 
     nav ul {
         display: none;
     }
 
-    .containerformation {
-        width: 100%;
+    /* ==================responsive accueil============================ */
+    .titreindex {
         display: flex;
+        height: 8vh;
+        background-color: #dcddd9;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        color: #000000;
+    }
+
+    /* Bloc de présentation principal */
+    .presentation {
+        display: flex;
+        flex-wrap: wrap;
+        /* permet d'aller à la ligne si besoin */
+        align-items: center;
+        justify-content: space-between;
+        padding: 5%;
+        height: 76vh;
+        width: 95%;
+        background-image: url("../image/A3-1920.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        gap: 20px;
+        /* espace entre éléments */
+    }
+
+    .titrebutton {
+        max-width: 500px;
+        /* limite la largeur du texte */
+        color: white;
+    }
+
+    .titrebutton h2 {
+        font-size: 2rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #94c33d;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #7fa82d;
+    }
+
+    /* ==================responsive page formation============================ */
+    .containerformation {
+        flex-direction: column;
+        /* Les colonnes passent l'une sous l'autre */
+        height: auto;
+        /* S'adapte au contenu */
+    }
+
+    .gauche,
+    .droites {
+        width: 100%;
+        /* Chaque bloc prend toute la largeur */
+        padding: 10px;
+        /* Un peu d'espace intérieur */
+    }
+
+    /* Ajuste l'espacement entre les blocs */
+    .containerformation {
+        gap: 10px;
+    }
+
+    /* Optionnel : réduire la taille des titres et textes */
+    h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    h2,
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* ==================responsive page temoignage============================ */
+    /* Container principal : reste centré */
+    .contenairpagetemoignage {
+        gap: 16px;
+    }
+
+    .temoignage {
+        flex: 1 1 calc(50% - 16px);
+    }
+
+    .temoignage img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* ==================responsive page reference============================ */
+    .contentpage4 {
+        padding: 20px 12px;
+        min-height: auto;
+        /* laisse grandir selon le contenu */
+        background-position: center;
+        /* recadre l’illustration */
+        gap: 18px;
+
+    }
+
+    .contentpage4 h3 {
+        font-size: 1.15rem;
+    }
+
+    .contentpage4>div {
+        gap: 10px 12px;
+        max-width: 720px;
+    }
+
+    .contentpage4>div img {
+        width: 68px;
+        /* logos plus compacts */
+    }
+
+    .contentpage4 {
+        padding: 16px 10px;
+        gap: 14px;
+    }
+
+    .contentpage4 h3 {
+        font-size: 1rem;
+        margin: 6px 0 4px;
+    }
+
+    .contentpage4>div {
+        gap: 8px 10px;
+        max-width: none;
+    }
+
+    .contentpage4>div img {
+        width: 52px;
+        /* encore plus petits */
+    }
+
+    /* le bloc global prend toute la largeur et s'allonge si besoin */
+
+    /* ==================responsive page formulaire============================ */
+    .contentpage5 {
+        display: block;
+        /* évite les contraintes d'inline-block */
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+        /* plus de 76vh qui coupe le contenu */
+        padding: 16px 12px 140px;
+        /* espace pour l'illustration en bas */
+        background-size: 260px;
+        /* image plus petite */
+        background-position: center bottom;
+        box-sizing: border-box;
+    }
+
+    /* le fieldset s'élargit pour être lisible */
+    fieldset {
+        width: 90%;
+        max-width: 560px;
+        margin: 0 auto 14px auto;
+    }
+
+    /* on empile label + input */
+    .formulaire label {
+        display: block;
+        width: auto;
+        margin: 0 0 6px;
+    }
+
+    .formulaire input[type="text"],
+    .formulaire input[type="email"] {
+        display: block;
+        width: 100%;
+        margin: 0 0 12px;
+    }
+
+    /* groupes radio : texte à droite du bouton */
+    .votresituation,
+    .modalite {
+        display: block;
+        margin: 10px 0 14px;
+    }
+
+    .votresituation label,
+    .modalite label {
+        display: inline-block;
+        width: auto;
+        /* plus 10% */
+        margin: 0 8px 8px 0;
+        vertical-align: middle;
+    }
+
+    .votresituation input[type="radio"],
+    .modalite input[type="radio"] {
+        width: auto;
+        /* plus 20% */
+        margin-right: 6px;
+        vertical-align: middle;
+    }
+
+    /* boutons */
+    .button {
+        display: flex;
+        gap: 10px;
         flex-wrap: wrap;
     }
 
-
-
-
-
+    .button button {
+        flex: 1 1 auto;
+        min-width: 140px;
+    }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width:550px) {
+
+    /* Cache le menu de base */
     nav ul {
         display: none;
     }
 
-    nav label::before {
+    /* Icône burger */
+    label::before {
         content: "☰";
     }
 
@@ -429,29 +721,173 @@ fieldset {
         color: white;
         cursor: pointer;
         font-size: 30px;
+        z-index: 20;
     }
 
+    /* Icône X quand le menu est ouvert */
     #toggle:checked~nav label::before {
-        content: "X";
+        content: "✖";
     }
 
+    /* Bloc du menu qui s'affiche sous le burger */
     #toggle:checked~nav ul {
         display: flex;
         flex-direction: column;
-        margin-top: 30vh;
-        z-index: 10;
-    }
-
-    #toggle:checked~nav ul li {
-        display: flex;
-        justify-content: center;
-        width: 20vw;
+        position: absolute;
+        /* Compact et reste en haut */
+        top: 8vh;
+        /* juste sous le header */
+        right: 10px;
+        /* collé à droite */
         background-color: #94c33d;
-        padding: 10px;
+        padding: 5px;
+        border-radius: 8px;
+        z-index: 15;
+    }
+
+    /* Les éléments du menu */
+    #toggle:checked~nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    /* Liens simplifiés pour le menu burger */
+    #toggle:checked~nav ul li a {
+        background-color: transparent !important;
+        /* pas de fond blanc */
+        border-radius: 0 !important;
+        /* pas d'arrondi */
+        color: white !important;
+        /* texte blanc */
+        width: 100%;
+        display: block;
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    /* Effet au survol */
+    #toggle:checked~nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ==================responsive page acueil============================ */
+    /* Section présentation en pleine largeur */
+    .presentation {
+        display: flex;
+        flex-direction: column;
+        /* Passe en colonne */
+        justify-content: center;
+        /* Centrer verticalement */
+        align-items: center;
+        /* Centrer horizontalement */
+        text-align: center;
+        /* Texte centré */
+
+        width: 100% !important;
+        /* Force la pleine largeur */
+        max-width: 100% !important;
+        /* Pas de limite */
+        margin: 0 !important;
+        /* Supprime toute marge externe */
+        padding: 0 !important;
+        /* Supprime tout padding interne */
+
+        height: 100vh;
+        /* S'adapte au contenu */
+        min-height: 300px;
+        /* Optionnel, hauteur minimale */
+
+        background-size: cover;
+        /* L'image couvre toute la zone */
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /* Bloc texte */
+    .titrebutton {
+        padding: 15px;
 
     }
 
+    .titrebutton h2 {
+        font-size: 1.3rem;
+        color: white;
+        margin-bottom: 15px;
+    }
 
+    /* Bouton adaptatif */
+    .btn {
+        display: block;
+        width: 80%;
+        max-width: 250px;
+        margin: 0 auto;
+        padding: 12px;
+        font-size: 1rem;
+        text-align: center;
+    }
 
+    /* ==================responsive page formation============================ */
+    /* Le container devient une seule colonne */
+    .contenairpagetemoignage {
+        flex-direction: wrap;
 
+        align-items: center;
+        gap: 14px;
+    }
+
+    .temoignage {
+        flex: 1 1 100%;
+        width: 92%;
+        /* jolie marge latérale */
+    }
+
+    .temoignage img {
+        width: 72px;
+        height: 72px;
+    }
+
+    .temoignage p {
+        text-align: left;
+    }
+
+    /* ==================responsive page reference============================ */
+    .contentpage4 {
+        padding: 16px 10px 20px;
+        gap: 14px;
+    }
+
+    .contentpage4>div {
+        gap: 8px 10px;
+        max-width: none;
+    }
+
+    .contentpage4>div img {
+        width: 52px;
+    }
+
+    /* ==================responsive page formulaire============================ */
+    .contentpage5 {
+        padding: 14px 10px 110px;
+        background-size: 200px;
+        /* encore plus compacte */
+    }
+
+    fieldset {
+        width: 90%;
+        max-width: none;
+        margin: 0 0 14px 0;
+    }
+
+    .formulaire label {
+        position: static !important;
+        font-size: inherit;
+        color: inherit;
+    }
+
+    .titrepage5 h1 {
+        font-size: 1.35rem;
+    }
+
+    /* titre un peu plus petit */
 }
