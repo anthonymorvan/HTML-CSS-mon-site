@@ -5,6 +5,13 @@
     margin: 0;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
 header {
     height: 8vh;
     background-color: #94c33d;
@@ -25,7 +32,7 @@ main {
     flex-direction: column;
     height: auto;
     width: auto;
-    justify-content: space-between;
+
 }
 
 
@@ -37,6 +44,7 @@ nav {
 
 
 footer {
+    width: 100%;
     height: 8vh;
     background-color: #94c33d;
     margin: 0;
@@ -104,40 +112,28 @@ label,
 .presentation {
     display: flex;
     flex-wrap: wrap;
-
+    align-items: center;
+    padding-left: 5%;
     height: 76vh;
+    width: 95%;
     background-image: url(../image/A3-1920.jpg);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center;
 }
 
-.titreboutton {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-self: center;
-    width: 30%;
-    height: 20%;
-    padding: 150px;
-    align-items: center;
+.presentation h2 {
+    color: #94c33d;
+    padding-bottom: 10%;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 
 .btn {
+    display: flex;
+    flex-direction: column;
     width: 210px;
     height: 15px;
     padding: 10px 10px;
@@ -155,6 +151,7 @@ label,
 }
 
 .titreindex {
+    display: flex;
     height: 8vh;
     background-color: #dcddd9;
     margin: 0;
@@ -164,15 +161,11 @@ label,
     color: #000000;
 }
 
-.titreh2index {
 
-    align-items: center;
-    color: #94c33d;
-}
 
 .titrepage2 {
 
-    height: 10%;
+    height: 8vh;
     background-color: #dcddd9;
     margin: 0;
     display: flex;
@@ -192,7 +185,7 @@ label,
     /* Espace horizontal entre les deux colonnes */
     padding: 5px;
     /* Ajoute un espace intérieur au conteneur */
-    height: 75vh;
+    height: 76vh;
     /* Le conteneur occupe toute la hauteur visible de la fenêtre */
     box-sizing: border-box;
     /* Inclut les bordures et le padding dans la taille totale */
@@ -233,7 +226,7 @@ p {
 }
 
 .titrepagetemoignage {
-    height: 10%;
+    height: 8vh;
     background-color: #dcddd9;
     margin: 0;
     display: flex;
@@ -245,32 +238,35 @@ p {
 
 .contenairpagetemoignage {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 72.3vh;
+    height: 72.6vh;
     background-color: #ffffff;
     margin: 5px auto;
     flex-direction: column;
 }
 
-h3 {
-    text-align: center;
-}
+
 
 .temoignage {
+    display: flex;
     width: 30%;
     height: 80%;
     margin: auto;
     background-color: #94c33d;
     text-align: justify;
-    line-height: 1.6;
+    flex-wrap: wrap;
+
+}
+
+.container h3 {
+    text-align: center;
 
 }
 
 .titrepage4 {
-    height: 10%;
+    height: 8vh;
     background-color: #dcddd9;
     margin: 0;
     display: flex;
@@ -281,7 +277,7 @@ h3 {
 
 
 .titrepage5 {
-    height: 10%;
+    height: 8vh;
     background-color: #dcddd9;
     margin: 0;
     display: flex;
@@ -292,16 +288,32 @@ h3 {
 }
 
 .contentpage4 {
-    display: inline-block;
-    align-items: start;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
     background-image: url(../image/A2-1920.jpg);
     background-size: 100%;
     background-position: left;
     background-repeat: no-repeat;
-    height: 75vh;
+    height: 76vh;
     color: #ffffff;
 }
+
+.contentpage4 h3 {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 15%;
+    font-size: 150%;
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -311,7 +323,7 @@ h3 {
     display: inline-block;
     margin-left: 15px;
     width: 97%;
-    height: 75vh;
+    height: 76vh;
     background-image: url(../image/form-icon-design-free-vector.jpg);
     background-repeat: no-repeat;
     background-size: 30%;
@@ -329,7 +341,7 @@ h3 {
     /* Espacement entre chaque ligne */
     vertical-align: middle;
     /* Alignement vertical du texte avec l'input */
-    font-weight: bold;
+
 }
 
 .formulaire input[type="text"],
@@ -356,8 +368,8 @@ h3 {
     text-align: left;
     /* Le texte reste aligné à gauche */
     vertical-align: middle;
-    margin-bottom: 8px;
-    /* Espace entre les lignes */
+    padding-bottom: ;
+
 }
 
 .votresituation input[type="radio"],
@@ -374,10 +386,72 @@ h3 {
 .votresituation,
 .modalite {
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 6px;
 }
 
 .contenpage5,
 fieldset {
     width: 30%;
+}
+
+@media screen and (max-width:768px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .containerformation {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+
+
+
+}
+
+@media screen and (max-width:550px) {
+    nav ul {
+        display: none;
+    }
+
+    nav label::before {
+        content: "☰";
+    }
+
+    label {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    #toggle:checked~nav label::before {
+        content: "X";
+    }
+
+    #toggle:checked~nav ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30vh;
+        z-index: 10;
+    }
+
+    #toggle:checked~nav ul li {
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+        background-color: #94c33d;
+        padding: 10px;
+
+    }
+
+
+
+
 }
